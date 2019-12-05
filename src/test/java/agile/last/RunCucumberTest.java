@@ -6,5 +6,5 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/main/resources/dojo", strict = true, monochrome = true, plugin = {"pretty", "junit:target/cucumber.xml"})
+@CucumberOptions(features="src/test/java/agile/last/resources/dojo", strict = true, monochrome = true, plugin = {"pretty", "junit:target/cucumber.xml"})
 public class RunCucumberTest { }

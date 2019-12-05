@@ -2,7 +2,16 @@ package agile.last;
 
 public class FullForce implements Strategy {
 	@Override
-	public SuperHeros strike(SuperHeros superhero) {
-		return superhero;
+	public void strike(SuperHeros superhero) {
+		int ind_weapon=0;
+		for(int i=0; i<superhero.getArm().size();i++){
+			if(superhero.getArm().get(ind_weapon).getRendement()<superhero.getArm().get(i).getRendement()) {
+				ind_weapon = i;
+			}
+		}
+		superhero.usethis(ind_weapon);
+		
+		superhero.drinkBottle("force");
+		//return superhero;
 	}
 }

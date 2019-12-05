@@ -38,12 +38,11 @@ public class AchatSteps {
 	@Then("Mickael obtient une bouteille.")
 	public void mickael_obtient_une_bouteille() {
 		assertEquals(true, mickael.getPossessions().contains(chosen));
-		assertEquals(mickael.getArgent(), argentbase-chosen.getPrix());
+		assertEquals(mickael.getArgent(), argentbase - chosen.getPrix());
 	}
 	
 	@Then("Achat refuse avec le message pas assez d'argent.")
 	public void achat_refuse() {
 		assertEquals(false, mickael.getPossessions().contains(chosen2));
-		System.out.println("pas assez d'argent");
 	}
 }

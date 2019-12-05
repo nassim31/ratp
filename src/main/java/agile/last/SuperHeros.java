@@ -84,8 +84,11 @@ public class SuperHeros extends Person {
     public void  addWeepon(Weapon tmp){
         this.arm.add(tmp);
     }
-    public void boireVie(){
-
+    
+    public void strike(Strategy methode) {
+    	methode.strike(this);
+    	this.power=this.powerBerforPowerUp;
+    	this.powerUp=false;
     }
 
 

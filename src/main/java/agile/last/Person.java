@@ -5,6 +5,13 @@ import java.util.List;
 
 
 public class Person{
+    protected String nom;
+    protected int argent;
+    protected List<Boisson> possessions= new ArrayList<Boisson>();
+    protected int lifePoints;
+    protected int power;
+    protected boolean powerUp=false;
+    protected int powerBerforPowerUp=0;
 
     public Person() {
         this.nom="";
@@ -29,11 +36,8 @@ public class Person{
         this.power = power;
     }
 
-    protected String nom;
-    protected int argent;
-    protected List<Boisson> possessions= new ArrayList<Boisson>();
-    protected int lifePoints;
-    protected int power;
+
+    
     protected int getLifePoints(){
         return this.lifePoints;
     }
@@ -92,6 +96,16 @@ public class Person{
     }
 //   ----------------------------------------------------------
 
+    public void boireVie(Boisson vie){
+	    this.lifePoints+= ((int) vie.getPuissance());
+	}
+
+    public void boireForce(Boisson force){
+	    this.powerBerforPowerUp=this.power;
+	    this.powerUp=true;
+	    this.power+= ((int) force.getPuissance());
+	}
+    
     public boolean drinkBottle(String B_name){
         Boisson ef=new Boisson(B_name);
         String effet=ef.effects();
