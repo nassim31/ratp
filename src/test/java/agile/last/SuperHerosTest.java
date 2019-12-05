@@ -3,13 +3,15 @@ package agile.last;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-class SuperHerosTest {
+public class SuperHerosTest {
 
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
@@ -35,7 +37,10 @@ class SuperHerosTest {
     {
         // Initialisez ici vos engagements
         SuperHeros venom = new SuperHeros(20,10);
-        SuperHeros venom2 = new SuperHeros(20,10, (List<Weapon>) new Weapon(10, "excalibur"));
+        List<Weapon> weap = new ArrayList<Weapon>();
+        Weapon excalibur = new Weapon(10, "excalibur");
+        weap.add(excalibur);
+        SuperHeros venom2 = new SuperHeros(20,10, weap);
     }
 
     @Test
@@ -65,20 +70,20 @@ class SuperHerosTest {
 
 
     @Test
-    void usethis () {
+    public void usethis () {
         SuperHeros venom2 = new SuperHeros(20,10, new Weapon(10, "excalibur"));
         Assert.assertEquals(true, venom2.usethis(1));
         Assert.assertEquals(false, venom2.usethis(6));
     }
 
     @Test
-    void viewWeapons () {
+    public void viewWeapons () {
         SuperHeros venom2 = new SuperHeros(20,10 );
         Assert.assertEquals("this is it", "hand/1", venom2.viewWeapons());
     }
 
     @Test
-    void addWeepon () {
+    public void addWeepon () {
         SuperHeros venom2 = new SuperHeros(20,10 );
         venom2.addWeepon(new Weapon(1, "lol"));
         Assert.assertEquals("this is it", "hand/1lol/1", venom2.viewWeapons());

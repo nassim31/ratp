@@ -84,9 +84,14 @@ public class Person{
         return false;
     }
 
+	public Boisson selectBottle(List<Boisson> boissons, int i) {
+		if(i<boissons.size()) {
+			return boissons.get(i);
+		}
+		return null;
+	}
 
-
-    public void paratager(Person pote, Boisson B){
+    public void partager(Person pote, Boisson B){
         int pos=possessions.indexOf(B);
         double pui=possessions.get(pos).getPuissance()/2.0;
         possessions.get(pos).setPuissance(pui);
