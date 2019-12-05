@@ -3,25 +3,68 @@ package agile.last;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Person{
+
     public Person() {
+        this.nom="";
+        this.argent=0;
     }
 
-    private String nom;
-    private int argent;
-    private List<Boisson> possessions= new ArrayList<Boisson>();
-
-    public Person (String nom, int argent) {
+    public Person(String nom, int argent) {
         this.nom = nom;
         this.argent = argent;
     }
 
-    public Person (String nom, int argent, List<Boisson> possessions) {
+    public Person(String nom, int argent, List<Boisson> possessions) {
         this.nom = nom;
         this.argent = argent;
         this.possessions = possessions;
     }
 
+    public Person(int lifePoints, int power) {
+        this.nom="";
+        this.argent=0;
+        this.lifePoints = lifePoints;
+        this.power = power;
+    }
+
+    protected String nom;
+    protected int argent;
+    protected List<Boisson> possessions= new ArrayList<Boisson>();
+    protected int lifePoints;
+    protected int power;
+    protected int getLifePoints(){
+        return this.lifePoints;
+    }
+
+    public int getPower(){
+        return this.power;
+    }
+    public void setPower(int pUp){
+        this.power+=pUp;
+    }
+
+
+    // my setters
+    public void setLifePoints(int lp){
+        this.lifePoints+=lp;
+    }
+
+    public Person(String nom, int argent, List<Boisson> possessions, int lifePoints, int power) {
+        this.nom = nom;
+        this.argent = argent;
+        this.possessions = possessions;
+        this.lifePoints = lifePoints;
+        this.power = power;
+    }
+
+    public Person(String nom, int argent, int lifePoints, int power) {
+        this.nom = nom;
+        this.argent = argent;
+        this.lifePoints = lifePoints;
+        this.power = power;
+    }
 
     //--------------Setters & Getters-----------------------------
     public String getNom () {
@@ -65,6 +108,7 @@ public class Person{
         Boolean found=(pos>-1);
         /////------Comment agire sur vital------------
         if ( found ){
+
             possessions.remove(pos);
             return true;
         }
@@ -91,7 +135,7 @@ public class Person{
 		return null;
 	}
 
-    public void partager(Person pote, Boisson B){
+    public void paratager(Person pote, Boisson B){
         int pos=possessions.indexOf(B);
         double pui=possessions.get(pos).getPuissance()/2.0;
         possessions.get(pos).setPuissance(pui);
