@@ -12,10 +12,10 @@ public class CareTaker {
         mementoList.add(state);
     }
 
-    public Memento get(int index){
-        if(mementoList.size()>index && index>0){
-        return mementoList.get(index);
-        }else return mementoList.get(0);
+    public Memento get(int index) throws Exception{
+        if(mementoList.size()>index && index>=0){
+        	return mementoList.get(index);
+        } else throw new Exception("Cette Sauvegarde n'existe pas");
     }
 
 }

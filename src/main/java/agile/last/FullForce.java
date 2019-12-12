@@ -5,6 +5,6 @@ public class FullForce implements Strategy {
 		int ind_weapon=superhero.chooseBestWeapon();
 		superhero.usethis(ind_weapon);
 		superhero.drinkBottle("force");
-		return superhero.getPower();
+		return superhero.getPowerWithWeapon();
 	}
 }

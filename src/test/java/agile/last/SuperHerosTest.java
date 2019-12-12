@@ -60,7 +60,7 @@ public class SuperHerosTest {
         weap.add(baton);
         SuperHeros venom = new SuperHeros(20, 10, weap);
         venom.usethis(2);
-        assertEquals(venom.getPower(), 30);
+        assertEquals(venom.getPowerWithWeapon(), 30);
     }
     
     @Test
@@ -113,6 +113,14 @@ public class SuperHerosTest {
     public void viewWeapons () {
         SuperHeros venom2 = new SuperHeros(20,10 );
         Assert.assertEquals("this is it", "hand/1", venom2.viewWeapons());
+    }
+    
+    @Test
+    public void attack () {
+        SuperHeros venom = new SuperHeros(20, 10, new Weapon(3,"lol"));
+        SuperHeros venom2 = new SuperHeros(40, 10);
+        venom.attack(venom2);
+        assertEquals(30, venom2.getLifePoints());
     }
 
     @Test

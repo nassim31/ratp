@@ -4,6 +4,6 @@ public class Economic implements Strategy {
 	public int strike(SuperHeros superhero) {
 		int ind_weapon=superhero.chooseBestWeapon();
 		superhero.usethis(ind_weapon);
-		return superhero.getPower();
+		return superhero.getPowerWithWeapon();
 	}
 }

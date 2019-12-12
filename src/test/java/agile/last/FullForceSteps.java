@@ -7,7 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class FullForceTest {
+public class FullForceSteps {
 
 		Weapon arm1 = new Weapon(5, "arm1"); 
 		Weapon arm2 = new Weapon(10, "arm2"); 
@@ -33,13 +33,15 @@ public class FullForceTest {
 			popeye.buyBottle(b);
 			int lp = ploto.getLifePoints();
 			popeye.attack(ploto);
-			assertEquals(ploto.getLifePoints(), lp-popeye.getPower());
+			assertEquals(ploto.getLifePoints(), lp-popeye.getPowerWithWeapon());
 		}
 		
 		@Then("Popeye voit sa force augmenter encore plus")
 		public void popeye_voit_sa_force_augmenter_encore_plus() {
-			double power_apres = popeye.getPower();
-			double power = power_avant*arm2.getRendement() + b.getPuissance() ;
+			double power_apres = (double)popeye.strike(full);
+			double power = (power_avant + b.getPuissance())*arm2.getRendement() ;
+			System.out.println(power);
+			System.out.println(power_apres);
 			assertTrue(power_apres == power );
 			assertTrue(power_avant < power_apres);
 		}

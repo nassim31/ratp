@@ -69,7 +69,6 @@ public class SuperHeros extends Person {
     public Boolean usethis(int choose){
         if((choose< arm.toArray().length) && choose>=0){
             this.choosen=choose;
-            this.power =  arm.get(choosen).getRendement()*power;
             return true;
         }else {
             return false;
@@ -79,8 +78,10 @@ public class SuperHeros extends Person {
         return power;
     }
     public void attack(SuperHeros ennemi){
-        int lp =  this.getPower();
-        ennemi.setLifePoints(ennemi.getLifePoints()-lp);
+    	int lp =  this.getPowerWithWeapon();
+        int lpE =  ennemi.getLifePoints();
+        int tmp=lpE-lp;
+        ennemi.setLifePoints(tmp);
     }
     //Weapons list
     public String viewWeapons(){
@@ -101,6 +102,38 @@ public class SuperHeros extends Person {
     	this.powerUp=false;
     	return hit;
     }
+    
+    public int getPowerWithWeapon(){
+        return arm.get(choosen).getRendement()*power;
+    }
+    
+  //------------------------Memento---------------------------------------
+    private void setState(SuperHeros state){
+
+	    nom=state.nom;
+	    argent=state.argent;
+	    possessions=state.possessions;
+	    lifePoints=state.lifePoints;
+	    power=state.power;
+	    arm=state.arm;
+	    choosen=state.choosen;
+	    powerUp=state.powerUp;
+	    powerBerforPowerUp=state.powerBerforPowerUp;
+    }
+
+   private Memento genreateState(){
+        return new Memento(new SuperHeros(nom, argent, possessions, lifePoints, power, arm)) ;
+    }
+
+
+    public Memento saveStateToMemento(){
+        return this.genreateState();
+    }
+
+    public void getStateFromMemento(Memento Memento){
+        this.setState(Memento.getState());
+    }
+
 
 
 }

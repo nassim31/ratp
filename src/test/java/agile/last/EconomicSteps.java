@@ -7,7 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class EconomicTest {
+public class EconomicSteps {
 	Weapon arm1 = new Weapon(5, "arm1"); 
 	Weapon arm2 = new Weapon(10, "arm2"); 
 	SuperHeros popeye = new SuperHeros(10, 10); 
@@ -29,12 +29,12 @@ public class EconomicTest {
 		int lp = ploto.getLifePoints();
 		eco.strike(popeye);
 		popeye.attack(ploto);
-		assertEquals(ploto.getLifePoints(), lp-popeye.getPower());
+		assertEquals(ploto.getLifePoints(), lp-popeye.getPowerWithWeapon());
 	}
 	
 	@Then("Popeye voit sa force augmenter")
 	public void popeye_voit_sa_force_augmenter() {
-		int power_apres = popeye.getPower();
+		int power_apres = popeye.getPowerWithWeapon();
 		assertEquals(power_apres, power_avant*arm2.getRendement());
 		assertTrue(power_avant < power_apres);
 	}

@@ -25,6 +25,6 @@ public class ArmeSteps {
 	
 	@Then("Nassim verifie la puissance de l arme")
 	public void nassim_verifie_la_puissance_de_l_arme() {
-		assertEquals(nassim.getPower(), 20); // Nassim vérifie la puissance de son arme
+		assertEquals(nassim.getPowerWithWeapon(), 20); // Nassim vérifie la puissance de son arme
 	}
 }
