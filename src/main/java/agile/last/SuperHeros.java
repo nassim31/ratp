@@ -39,16 +39,16 @@ public class SuperHeros extends Person {
     // Constructor of my Class
 
 
-    public SuperHeros(String nom, int argent, List<Boisson> possessions, int lifePoints, int power, List<Weapon> arm) {
+    public SuperHeros(String nom, int argent, List<Boisson> possessions, int lifePoints, int power, List<Weapon> arme) {
         super(nom, argent, possessions, lifePoints, power);
         arm.add(DEFAULT);
-        arm.addAll(arm);
+        arm.addAll(arme);
     }
 
-    public SuperHeros(String nom, int argent, int lifePoints, int power, List<Weapon> arm) {
+    public SuperHeros(String nom, int argent, int lifePoints, int power, List<Weapon> arme) {
         super(nom, argent, lifePoints, power);
         arm.add(DEFAULT);
-        arm.addAll(arm);
+        arm.addAll(arme);
     }
 
     // check if he is still alive
@@ -56,9 +56,18 @@ public class SuperHeros extends Person {
         return this.lifePoints>0;
     }
 
+    public int chooseBestWeapon() {
+	    int ind_weapon=0;
+		for(int i=0; i<this.getArm().size();i++){
+			if(this.getArm().get(ind_weapon).getRendement()<this.getArm().get(i).getRendement()) {
+				ind_weapon = i;
+			}
+		}
+		return ind_weapon;
+    }
 
     public Boolean usethis(int choose){
-        if((choose< arm.toArray().length) && choose>0){
+        if((choose< arm.toArray().length) && choose>=0){
             this.choosen=choose;
             return true;
         }else {
@@ -85,10 +94,11 @@ public class SuperHeros extends Person {
         this.arm.add(tmp);
     }
     
-    public void strike(Strategy methode) {
-    	methode.strike(this);
+    public int strike(Strategy methode) {
+    	int hit = methode.strike(this);
     	this.power=this.powerBerforPowerUp;
     	this.powerUp=false;
+    	return hit;
     }
 
 

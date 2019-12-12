@@ -1,5 +1,5 @@
 package agile.last;
 
 public interface Strategy {
-	public void strike(SuperHeros superhero);
+	public int strike(SuperHeros superhero);
 }

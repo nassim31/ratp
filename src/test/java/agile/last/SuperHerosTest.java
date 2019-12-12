@@ -39,7 +39,9 @@ public class SuperHerosTest {
         SuperHeros venom = new SuperHeros(20,10);
         List<Weapon> weap = new ArrayList<Weapon>();
         Weapon excalibur = new Weapon(10, "excalibur");
+        Weapon baton = new Weapon(3,"baton");
         weap.add(excalibur);
+        weap.add(baton);
         SuperHeros venom2 = new SuperHeros(20,10, weap);
     }
 
@@ -51,9 +53,40 @@ public class SuperHerosTest {
 
     @Test
     public void attackWithWeaponTest () {
-        SuperHeros venom = new SuperHeros(20, 10, new Weapon(3,"lol"));
-        venom.usethis(1);
+    	List<Weapon> weap = new ArrayList<Weapon>();
+        Weapon excalibur = new Weapon(10, "excalibur");
+        Weapon baton = new Weapon(3,"baton");
+        weap.add(excalibur);
+        weap.add(baton);
+        SuperHeros venom = new SuperHeros(20, 10, weap);
+        venom.usethis(2);
         assertEquals(venom.getPowerWithWeapon(), 30);
+    }
+    
+    @Test
+    public void strikeEconomicTest() {
+    	List<Weapon> weap = new ArrayList<Weapon>();
+        Weapon excalibur = new Weapon(10, "excalibur");
+        Weapon baton = new Weapon(3,"baton");
+        weap.add(baton);
+        weap.add(excalibur);
+        SuperHeros venom = new SuperHeros("venom", 50, 20, 10, weap);
+        assertEquals(2, venom.chooseBestWeapon());
+        assertEquals(100, venom.strike(new Economic()));
+    }
+    
+    @Test
+    public void strikeFullForceTest() {
+    	List<Weapon> weap = new ArrayList<Weapon>();
+        Weapon excalibur = new Weapon(10, "excalibur");
+        Weapon baton = new Weapon(3,"baton");
+        Boisson pforce=new Boisson("pforce",10,15);
+        weap.add(baton);
+        weap.add(excalibur);
+        SuperHeros venom = new SuperHeros("venom", 50, 20, 10, weap);
+        venom.buyBottle(pforce);
+        assertEquals(2, venom.chooseBestWeapon());
+        assertEquals(250, venom.strike(new FullForce()));   
     }
 
     /**

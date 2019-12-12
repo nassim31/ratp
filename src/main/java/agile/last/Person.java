@@ -34,6 +34,7 @@ public class Person{
         this.argent=0;
         this.lifePoints = lifePoints;
         this.power = power;
+        this.powerBerforPowerUp = power;
     }
 
 
@@ -61,6 +62,7 @@ public class Person{
         this.possessions = possessions;
         this.lifePoints = lifePoints;
         this.power = power;
+        this.powerBerforPowerUp = power;
     }
 
     public Person(String nom, int argent, int lifePoints, int power) {
@@ -68,6 +70,7 @@ public class Person{
         this.argent = argent;
         this.lifePoints = lifePoints;
         this.power = power;
+        this.powerBerforPowerUp = power;
     }
 
     //--------------Setters & Getters-----------------------------
@@ -122,6 +125,11 @@ public class Person{
         Boolean found=(pos>-1);
         /////------Comment agire sur vital------------
         if ( found ){
+            if (effet.equals("vie"))
+            this.boireVie(this.possessions.get(pos));
+            if (effet.equals("force")){
+                this.boireForce(this.possessions.get(pos));
+            }
 
             possessions.remove(pos);
             return true;
