@@ -69,16 +69,17 @@ public class SuperHeros extends Person {
     public Boolean usethis(int choose){
         if((choose< arm.toArray().length) && choose>=0){
             this.choosen=choose;
+            this.power =  arm.get(choosen).getRendement()*power;
             return true;
         }else {
             return false;
         }
     }
-    public int getPowerWithWeapon(){
-        return arm.get(choosen).getRendement()*power;
+    public int getPower(){
+        return power;
     }
     public void attack(SuperHeros ennemi){
-        int lp =  this.getPowerWithWeapon();
+        int lp =  this.getPower();
         ennemi.setLifePoints(ennemi.getLifePoints()-lp);
     }
     //Weapons list
@@ -90,7 +91,7 @@ public class SuperHeros extends Person {
         return tmp;
     }
 
-    public void  addWeepon(Weapon tmp){
+    public void  addWeapon(Weapon tmp){
         this.arm.add(tmp);
     }
     

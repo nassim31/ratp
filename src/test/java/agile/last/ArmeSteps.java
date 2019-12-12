@@ -14,7 +14,7 @@ public class ArmeSteps {
 	@Given("Nassim ajoute une nouvelle arme dans son arsenal")
 	public void nassim_ajoute_une_nouvelle_arme_dans_son_arsenal() {
 		assertEquals(nassim.getPower(), 2); // on s'assure que la puissance de Nassime est égale à 2 avant d'utiliser son arme
-		nassim.addWeepon(arm); // Nassim ajoute l'arme
+		nassim.addWeapon(arm); // Nassim ajoute l'arme
 	}
 	
 	@When("Nassim choisit cette arme")
@@ -25,6 +25,6 @@ public class ArmeSteps {
 	
 	@Then("Nassim verifie la puissance de l arme")
 	public void nassim_verifie_la_puissance_de_l_arme() {
-		assertEquals(nassim.getPowerWithWeapon(), 20); // Nassim vérifie la puissance de son arme
+		assertEquals(nassim.getPower(), 20); // Nassim vérifie la puissance de son arme
 	}
 }

@@ -53,7 +53,7 @@ public class Person{
 
     // my setters
     public void setLifePoints(int lp){
-        this.lifePoints+=lp;
+        this.lifePoints=lp;
     }
 
     public Person(String nom, int argent, List<Boisson> possessions, int lifePoints, int power) {
