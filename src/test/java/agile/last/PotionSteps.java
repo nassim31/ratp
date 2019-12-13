@@ -11,8 +11,8 @@ import cucumber.api.java.en.When;
 
 public class PotionSteps {
 	
-	private Boisson petitepotionvie;
-	private Boisson moyennepotionforce;
+	private Boisson petitepotionvie = new Boisson();
+	private Boisson moyennepotionforce = new Boisson();
 	String effect1;
 	String effect2;
 	

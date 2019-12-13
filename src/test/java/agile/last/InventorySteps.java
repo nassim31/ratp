@@ -10,7 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;  
 
 public class InventorySteps {
-	private Person myriam;
+	private Person myriam = new Person();
 	private List<Boisson> boissons = new ArrayList<Boisson>();
 	private Boisson petitepotionvie = new Boisson("petite potion de vie", 10, 20);
 	private Boisson moyennepotionforce = new Boisson("moyenne potion de force", 20, 30);

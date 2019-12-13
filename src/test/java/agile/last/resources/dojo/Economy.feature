@@ -1,5 +1,5 @@
 @tag
-Feature: F_07 Choisir 
+Feature: F_05 Choisir 
   En tant que Popeye, 
   je veux pouvoir utiliser la strategie eco et voir ma force augmenter.
 

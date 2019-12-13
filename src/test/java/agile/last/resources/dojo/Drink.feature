@@ -1,7 +1,7 @@
 @tag
-Feature: F_02 Boire une potion
+Feature: F_04 Boire une potion
     En tant que Super-Nassim, je veux pouvoir boire une bouteille
-    dans mon inventaire et en acheter une correspondant à mes besoins
+    dans mon inventaire et en acheter une correspondant ï¿½ mes besoins
     si besoin 
 
   Scenario: Super-Nassim boit une potion

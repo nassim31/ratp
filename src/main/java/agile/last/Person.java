@@ -14,8 +14,6 @@ public class Person{
     protected int powerBerforPowerUp=0;
 
     public Person() {
-        this.nom="";
-        this.argent=0;
     }
 
     public Person(String nom, int argent) {

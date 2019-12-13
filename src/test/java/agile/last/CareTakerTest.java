@@ -10,8 +10,6 @@ public class CareTakerTest {
     public void add() throws Exception { //ici j'ai tester les deux fonctionnalités 2en1
         SuperHeros venom = new SuperHeros(20, 10, new Weapon(3,"lol"));
         venom.usethis(1);
-        System.out.println(venom.getPower());
-        System.out.println(venom.getArm().get(1).getRendement());
         assertEquals(venom.getPowerWithWeapon(), 30);
 
         SuperHeros venom2 = new SuperHeros(40, 10);

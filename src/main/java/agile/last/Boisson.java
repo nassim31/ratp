@@ -13,7 +13,10 @@ public class Boisson {
     /**
      * Constructeur d'objets de classe Boisson
      */
-
+    public Boisson() {
+    	
+    }
+    
     public Boisson (String nom, int prix, double puissance) {
         this.nom = nom;
         this.prix = prix;

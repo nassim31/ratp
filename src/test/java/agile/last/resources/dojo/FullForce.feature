@@ -1,5 +1,5 @@
 @tag
-Feature: F_06 Choisir une strategie
+Feature: F_07 Choisir une strategie
   En tant que Popeye, 
   je veux pouvoir utiliser la strategie fullForce et voir ma force encore plus augmenter.
 
