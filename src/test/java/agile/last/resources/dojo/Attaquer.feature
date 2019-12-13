@@ -1,4 +1,4 @@
-Feature: F_03
+Feature: F_03 Attaquer
 
 	En tant que joueur, je veux pouvoir attaquer un adversaire jusqu'à ce qu'il soit hors d'état de nuire.
 

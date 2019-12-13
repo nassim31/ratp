@@ -1,4 +1,4 @@
-Feature: F_02
+Feature: F_02 Acquerir une arme
 
 	En tant que joueur, je veux pouvoir acquerir une nouvelle arme et augmenter en force.
 	
